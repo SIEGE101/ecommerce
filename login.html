@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Log In — Student Marketplace</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="bg-orbs" aria-hidden="true">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+  </div>
+
+  <!-- Auth Page Layout -->
+  <div class="auth-page">
+
+    <!-- ── Left Visual Panel ── -->
+    <aside class="auth-visual" aria-hidden="true">
+      <div class="auth-visual-content">
+        <span class="auth-visual-icon">🎓</span>
+        <h2 class="auth-visual-title">Welcome back!</h2>
+        <p class="auth-visual-sub">
+          Jump back into the campus marketplace. Great deals are waiting for you.
+        </p>
+
+        <div class="auth-features">
+          <div class="auth-feature">
+            <div class="auth-feature-icon">💸</div>
+            <span>Save up to 70% vs. buying new</span>
+          </div>
+          <div class="auth-feature">
+            <div class="auth-feature-icon">🤝</div>
+            <span>Trade with verified students only</span>
+          </div>
+          <div class="auth-feature">
+            <div class="auth-feature-icon">⚡</div>
+            <span>List items in under 2 minutes</span>
+          </div>
+          <div class="auth-feature">
+            <div class="auth-feature-icon">🔒</div>
+            <span>Safe and secure transactions</span>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- ── Right Form Panel ── -->
+    <div class="auth-form-side">
+      <div class="auth-form-wrap">
+
+        <!-- Logo -->
+        <a href="index.html" class="auth-form-logo" aria-label="StudentMarket home">
+          <div class="auth-form-logo-icon" aria-hidden="true">🎓</div>
+          Student<span>Market</span>
+        </a>
+
+        <h1 class="auth-form-title">Log in</h1>
+        <p class="auth-form-sub">
+          New here?
+          <a href="register.html">Create a free account →</a>
+        </p>
+
+        <!-- Login Form -->
+        <form id="loginForm" novalidate aria-label="Login form">
+
+          <div class="form-group">
+            <label class="form-label" for="loginEmail">Email address</label>
+            <input
+              class="form-input"
+              type="email"
+              id="loginEmail"
+              name="email"
+              placeholder="you@university.edu"
+              autocomplete="email"
+              required
+              aria-required="true"
+            />
+            <span class="form-error hidden" id="emailError" role="alert">⚠ Please enter a valid email address.</span>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="loginPassword">Password</label>
+            <div class="form-input-wrap">
+              <input
+                class="form-input has-icon"
+                type="password"
+                id="loginPassword"
+                name="password"
+                placeholder="••••••••"
+                autocomplete="current-password"
+                required
+                aria-required="true"
+              />
+              <span class="form-input-icon" id="togglePassword" role="button" tabindex="0" aria-label="Toggle password visibility">👁</span>
+            </div>
+            <span class="form-error hidden" id="passwordError" role="alert">⚠ Password must be at least 6 characters.</span>
+          </div>
+
+          <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom: 20px;">
+            <label class="form-check">
+              <input type="checkbox" id="rememberMe" />
+              Remember me
+            </label>
+            <a href="#" style="font-size:.82rem; color: var(--accent);">Forgot password?</a>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-lg btn-full" id="loginBtn">
+            <span id="loginBtnText">Log in to my account</span>
+            <span id="loginSpinner" class="hidden" aria-hidden="true" style="
+              display:inline-block; width:16px; height:16px;
+              border:2px solid rgba(8,9,18,.3);
+              border-top-color:#080912;
+              border-radius:50%;
+              animation: spin .7s linear infinite;
+              vertical-align: middle;
+            "></span>
+          </button>
+
+          <div class="form-divider">or continue with</div>
+
+          <button type="button" class="btn btn-ghost btn-full" onclick="SM.showToast('Google login coming soon!', '🔜')">
+            <span style="font-size:1rem">🔍</span> Continue with Google
+          </button>
+
+        </form>
+
+        <p class="form-footer" style="margin-top: 28px;">
+          Don't have an account?
+          <a href="register.html">Sign up free</a>
+        </p>
+
+      </div>
+    </div><!-- end auth-form-side -->
+
+  </div><!-- end auth-page -->
+
+  <!-- Toast -->
+  <div class="toast hidden" id="toast" role="alert" aria-live="assertive">
+    <span class="toast-icon" id="toastIcon"></span>
+    <span class="toast-msg" id="toastMsg"></span>
+    <button class="toast-close" id="toastClose" aria-label="Close notification">✕</button>
+  </div>
+
+  <script src="app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      SM.initLoginForm();
+      SM.initPasswordToggle('loginPassword', 'togglePassword');
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Marketplace — Buy & Sell on Campus</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Background Orbs -->
+  <div class="bg-orbs" aria-hidden="true">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
+
+  <div class="page-wrapper">
+
+    <!-- ── Navigation ── -->
+    <nav class="nav" role="navigation" aria-label="Main navigation">
+      <a href="index.html" class="nav-logo" aria-label="Student Marketplace Home">
+        <div class="nav-logo-icon" aria-hidden="true">🎓</div>
+        Student<span>Market</span>
+      </a>
+
+      <ul class="nav-links" role="list">
+        <li><a href="index.html" class="active" aria-current="page">Home</a></li>
+        <li><a href="my-listings.html">My Listings</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="register.html">Register</a></li>
+      </ul>
+
+      <div class="nav-cta">
+        <a href="login.html" class="btn btn-ghost btn-sm">Log in</a>
+        <a href="register.html" class="btn btn-primary btn-sm">Get Started</a>
+      </div>
+
+      <button class="hamburger" id="hamburgerBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu" role="menu" aria-label="Mobile navigation">
+      <a href="index.html" class="active" role="menuitem">🏠 Home</a>
+      <a href="my-listings.html" role="menuitem">📦 My Listings</a>
+      <a href="login.html" role="menuitem">🔐 Login</a>
+      <a href="register.html" role="menuitem">✨ Register</a>
+    </div>
+
+    <!-- ── Hero Section ── -->
+    <section class="hero" aria-label="Hero section">
+      <div class="hero-content">
+        <div class="hero-badge" aria-label="Campus marketplace badge">
+          ✦ Built for students, by students
+        </div>
+
+        <h1 class="hero-title">
+          Your Campus<br />
+          <span class="gradient-text">Marketplace</span>
+        </h1>
+
+        <p class="hero-sub">
+          Buy, sell, and discover everything you need — textbooks, tech, furniture, and more.
+          Connect with students on your campus instantly.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#marketplace" class="btn btn-primary btn-lg">Browse Listings</a>
+          <a href="my-listings.html" class="btn btn-ghost btn-lg">Post an Item</a>
+        </div>
+
+        <div class="hero-stats" role="list" aria-label="Platform statistics">
+          <div role="listitem">
+            <div class="hero-stat-num" id="statListings">1,240</div>
+            <div class="hero-stat-label">Active Listings</div>
+          </div>
+          <div role="listitem">
+            <div class="hero-stat-num" id="statStudents">840</div>
+            <div class="hero-stat-label">Students</div>
+          </div>
+          <div role="listitem">
+            <div class="hero-stat-num" id="statSold">3.2k</div>
+            <div class="hero-stat-label">Items Sold</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Visual -->
+      <div class="hero-visual" aria-hidden="true">
+        <div class="hero-float-badge hero-float-badge-1">🔥 12 new today</div>
+        <div class="hero-mockup">
+          <div class="hero-mockup-header">
+            <span></span><span></span><span></span>
+          </div>
+          <div class="mini-grid">
+            <div class="mini-card">
+              <div class="mini-card-img" data-emoji="📚"></div>
+              <div class="mini-card-body">
+                <div class="mini-card-title">Calculus Textbook</div>
+                <div class="mini-card-price">$18</div>
+              </div>
+            </div>
+            <div class="mini-card">
+              <div class="mini-card-img" data-emoji="💻"></div>
+              <div class="mini-card-body">
+                <div class="mini-card-title">MacBook Charger</div>
+                <div class="mini-card-price">$25</div>
+              </div>
+            </div>
+            <div class="mini-card">
+              <div class="mini-card-img" data-emoji="🎮"></div>
+              <div class="mini-card-body">
+                <div class="mini-card-title">PS5 Controller</div>
+                <div class="mini-card-price">$40</div>
+              </div>
+            </div>
+            <div class="mini-card">
+              <div class="mini-card-img" data-emoji="🪑"></div>
+              <div class="mini-card-body">
+                <div class="mini-card-title">Desk Chair</div>
+                <div class="mini-card-price">$55</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="hero-float-badge hero-float-badge-2">💰 Save up to 70%</div>
+      </div>
+    </section>
+
+    <!-- ── Marketplace Section ── -->
+    <main id="marketplace" class="section" aria-label="Marketplace listings">
+      <div class="container">
+
+        <div class="section-header">
+          <div>
+            <h2 class="section-title">Browse <span>Listings</span></h2>
+            <p class="section-sub">Fresh items from students on your campus</p>
+          </div>
+          <a href="my-listings.html" class="btn btn-primary btn-sm">+ Post Item</a>
+        </div>
+
+        <!-- Search -->
+        <div class="search-bar" role="search">
+          <span class="search-bar-icon" aria-hidden="true">🔍</span>
+          <input
+            type="search"
+            id="searchInput"
+            placeholder="Search listings..."
+            aria-label="Search marketplace listings"
+          />
+        </div>
+
+        <!-- Category Filter -->
+        <div class="filter-bar" role="group" aria-label="Filter by category">
+          <button class="filter-tab active" data-category="all" aria-pressed="true">All Items</button>
+          <button class="filter-tab" data-category="books"    aria-pressed="false">📚 Books</button>
+          <button class="filter-tab" data-category="tech"     aria-pressed="false">💻 Tech</button>
+          <button class="filter-tab" data-category="furniture"aria-pressed="false">🪑 Furniture</button>
+          <button class="filter-tab" data-category="fashion"  aria-pressed="false">👕 Fashion</button>
+          <button class="filter-tab" data-category="sports"   aria-pressed="false">⚽ Sports</button>
+          <button class="filter-tab" data-category="other"    aria-pressed="false">🎲 Other</button>
+        </div>
+
+        <!-- Listing Grid — populated by JS -->
+        <div id="listingsContainer" class="listings-grid" aria-live="polite" aria-label="Listing results"></div>
+
+      </div>
+    </main>
+
+    <!-- ── Footer ── -->
+    <footer class="footer" role="contentinfo">
+      <div class="footer-inner">
+        <div class="footer-logo">
+          <div class="footer-logo-icon">🎓</div>
+          StudentMarket
+        </div>
+        <p class="footer-copy">© 2025 StudentMarket. Made with ☕ for students.</p>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="#">About</a>
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+        </nav>
+      </div>
+    </footer>
+
+  </div><!-- end page-wrapper -->
+
+  <!-- Toast -->
+  <div class="toast hidden" id="toast" role="alert" aria-live="assertive">
+    <span class="toast-icon" id="toastIcon"></span>
+    <span class="toast-msg" id="toastMsg"></span>
+    <button class="toast-close" id="toastClose" aria-label="Close notification">✕</button>
+  </div>
+
+  <script src="app.js"></script>
+  <script>
+    // Init page
+    document.addEventListener('DOMContentLoaded', () => {
+      SM.initNav();
+      SM.renderListings('all');
+      SM.initFilters();
+      SM.initSearch();
+      SM.animateStats();
+    });
+  </script>
+</body>
+</html>
